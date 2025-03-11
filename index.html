@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Currículo - Seu Nome</title>
+<style>
+body { font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }
+.container { width: 60%; margin: auto; }
+h1, h2 { color: #222; }
+button { font-size: 1.2em; }
+
+.menu-acessibilidade {
+position: fixed;
+top: 2rem;
+right: 20px;
+z-index: 1000;
+}
+.rotacao-botao {
+
+transform: rotate(-90deg);
+transform-origin: right center;
+}
+.opcoes-acessibilidade {
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+}
+.opcoes-acessibilidade button {
+margin-bottom: 5px;
+}
+.apresenta-lista {
+display: none; /* Mantemos escondido até ser ativado pelo JS */
+}
+.apresenta-lista {
+display: none; /* Mantemos escondido até ser ativado pelo JS */
+}
+.alto-contraste {
+background-color: black;
+color: rgb(241, 6, 162);
+}
+.opcoes-acessibilidade {
+background-color: white;
+padding: 10px;
+border-radius: 5px;
+box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.alto-contraste {
+background-color: black;
+color: rgb(221, 6, 199);
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Luana Gabriele De Lima Ramos</h1>
+<p>Email: luana.lima.ramos@escola.pr.gov.br | Telefone: (41) 99999-8888</p>
+<h2>Resumo</h2>
+<p>Desenvolvedor Web Júnior, .</p>
+<h2>1 período da faculdade</h2>
+<p>TI - TUITI - 2025</p>
+<h2>Experiência com frameworks front-end e acessibilidade web.</h2>
+<p>DOM PEDRO II - DESENVOLVEDOR - MATUTINI</p>
+<h2>Habilidades</h2>
+<ul>
+<li>conhecimento em linguagens como HTML, CSS, JavaScript, além de frameworks e bibliotecas relevantes.</li>
+<li>Conhecimentos em bancos de dados e SEO também são valiosos.</li>
+</ul>
+<h2>Acessibilidade</h2>
+
+<div id="acessibilidade" class="menu-acessibilidade">
+    <button id="botao-acessibilidade" class="btn btn-primary fw-bold
+    rotacao-botao">Acessibilidade</button>
+    <div id="opcoes-acessibilidade" class="opcoes-acessibilidade apresenta-lista">
+    
+    <button id="aumentar-fonte" onclick="aumentarFonte()" class="btn btn-primary fw-
+    bold">A+</button>
+    
+    <button id="diminuir-fonte" onclick="diminuirFonte()" class="btn btn-primary fw-bold">A-
+    </button>
+    <button id="contraste" class="btn btn-primary fw-bold">Modo Alto Contraste</button>
+    </div>
+    </div>
+
+
+<button onclick="aumentarFonte()">A+</button>
+<button onclick="diminuirFonte()">A-</button>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+const botaoDeAcessibilidade = document.getElementById('botao-acessibilidade');
+const opcoesDeAcessibilidade = document.getElementById('opcoes-acessibilidade');
+const botaoContraste = document.getElementById('contraste');
+botaoDeAcessibilidade.addEventListener('click', function() {
+botaoDeAcessibilidade.classList.toggle('rotacao-botao');
+opcoesDeAcessibilidade.classList.toggle('apresenta-lista');
+opcoesDeAcessibilidade.style.display =
+(opcoesDeAcessibilidade.style.display === 'none' || opcoesDeAcessibilidade.style.display
+=== '')
+? 'block' : 'none';
+});
+botaoContraste.addEventListener('click', function() {
+document.body.classList.toggle('alto-contraste');
+});
+});
+function aumentarFonte() {
+document.body.style.fontSize = 'larger';
+}
+function diminuirFonte() {
+document.body.style.fontSize = 'smaller';
+}
+</script>
+</div>
+</body>
+</html>
